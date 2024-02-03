@@ -1,0 +1,243 @@
+/* Add your custom styles here */
+
+body, html {
+    height: 100%;
+}
+
+body {
+    padding-top: 110px; /* Increased space between navbar and section */
+    margin: 0;
+    /*background: url('background.jpg') center/cover no-repeat fixed; /* Adjusted background shorthand property */
+    color: #fff;
+}
+
+.navbar {
+    /*background-color: #03396c !important;*/
+}
+
+.navbar-dark .navbar-toggler-icon {
+    background-color: #fff !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff !important;
+    font-size: 20px; /* Increased font size */
+    margin-right: 30px; /* Increased spacing between links */
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ccc !important;
+}
+
+@media (max-width: 767px) {
+    .navbar-nav {
+        margin-top: 10px !important;
+    }
+}
+
+.custom-section {
+    padding: 50px 0;
+}
+
+.large-font {
+    font-size: 2.5em;
+}
+
+.small-font {
+    font-size: 20px;
+}
+.location {
+    margin-left: 47px;
+}
+.stimulus {
+    margin-left: 4px;
+}
+
+.text-black {
+    color: #000 !important;
+}
+
+.content-box {
+    margin-bottom: 20px;
+}
+
+.welcome-box {
+    display: inline-block; /* Set to inline-block */
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.welcome-text {
+    font-size: 2em; /* Increased font size for "WELCOME" text */
+    margin: 0; /* Remove margin */
+}
+
+.rounded-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Smooth shadow effect */
+}
+
+.section-title {
+    color: #001F3F; /* Dark blue font color for the title */
+}
+
+.button-container {
+    margin-top: 20px; /* Add space between title and buttons */
+}
+
+.start-button, .delete-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none; /* Remove border */
+    border-radius: 40px; /* Updated border-radius */
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px; /* Add space between buttons */
+    text-align: center; /* Center text */
+    width: 150px; /* Set the same width for both buttons */
+}
+
+.start-button {
+    background-color: #08A045; /* Updated color for Start button */
+}
+
+.delete-button {
+    background-color: #d00000; /* Updated color for Delete button */
+}
+
+/* Add FontAwesome icons */
+.start-button i, .delete-button i {
+    margin-right: 5px;
+    color: #fff !important; /* Set icon color to white */
+}
+
+.custom-section {
+    padding: 18px 0;
+}
+
+.add-videos-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.add-videos-box .add-videos-title {
+    color: #000; /* Black font color for the title */
+    font-size: 1.5em; /* Increased font size for the title */
+}
+
+.add-videos-box label,
+.add-videos-box .add-videos-label {
+    color: #000; /* Black font color for the labels */
+}
+
+.add-videos-form-control {
+    border-radius: 10px; /* Rounded corners for text fields */
+}
+label {
+    color: black;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.assessment-parameter-box .assessment-parameter-title {
+    color: #000; /* Black font color for the title */
+    font-size: 1.5em; /* Increased font size for the title */
+}
+
+.assessment-parameter-box label,
+.assessment-parameter-box .assessment-parameter-label {
+    color: #000; /* Black font color for the labels */
+}
+
+.assessment-parameter-text-field,
+.assessment-parameter-dropdown {
+    border-radius: 10px; /* Rounded corners for text fields and dropdowns */
+}
+
+.assessment-parameter-dropdown {
+    width: 100%; /* Match width to the text fields */
+}
+
+.add-stimulus-button {
+    background-color: #fff; /* Dark blue background color for the button */
+    color: #000; /* White font color for the button text */
+    border: 2px solid black;
+    border-radius: 5px; /* Rounded corners for the button */
+    padding: 10px 20px; /* Adjust padding as needed */
+    cursor: pointer;
+}
+/* ... (previous styles) ... */
+
+.assessment-parameter-section-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; /* Rounded corners for the box */
+    margin-left: 20px; /* Adjust left margin as needed */
+    margin-right: 20px; /* Adjust right margin as needed */
+}
+
+/* ... (remaining styles) ... */
+.line-divider {
+    width: 1px;
+    height: 100%;
+    background-color: #ccc;
+    margin: 0 20px; /* Adjust margin as needed */
+}
+
+/* Add space between elements in Part 2 of Section 2 */
+.assessment-parameter-box .form-group {
+    margin-bottom: 15px;
+}
+
+.footer {
+    background-color: grey;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.start-button,
+.delete-button,
+.add-stimulus-button {
+    transition: background-color 0.3s ease;
+}
+
+
+.delete-button:hover,
+.add-stimulus-button:hover {
+    background-color: #000; /* Adjust the color as needed */
+    color: #fff;
+}
+
+.start-button:hover
+{
+    background-color: #aad688; /* Adjust the color as needed */
+    color: #000;
+}
+
+.delete-button:hover {
+    background-color: #ff5252; /* Adjust the color as needed */
+    color: #000;
+}
+
+.video-label {
+    display: block;
+    margin-bottom: 5px; /* Adjust the spacing between checkbox and text */
+    font-size: 20px; /* Adjust the font size */
+}
+
+/* Style for checked checkboxes */
+#videoLibrary input[type="checkbox"]:checked{
+    background-color: black;
+}

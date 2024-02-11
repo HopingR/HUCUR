@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
         deleteSelectedVideos();
     });
 
-    document.getElementById('playBtn').addEventListener('click', () => {
+    document.getElementById('manageForm').addEventListener('submit', (e) => {
+        e.preventDefault();
         playVideos();
     });
 });
@@ -43,8 +44,10 @@ function playVideos() {
     sessionStorage.setItem('selectedVideos', JSON.stringify(selectedVideos));
 
     // Navigate to the playback.html page
+    alert(selectedVideos);
     alert('Redirecting');
     window.location.href = 'playback.html';
+    return false;
 }
 
 function addCookie(title, url, responseSequence){

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    getCookies();
+    updateUI();
 
     document.getElementById('form').addEventListener('submit', (e) => {
         e.preventDefault();
@@ -10,21 +10,23 @@ document.addEventListener('DOMContentLoaded', function () {
         if (title === "" || url === "" || responseSequence.some(isNaN)) {
             alert("Please enter all the fields and ensure response sequence contains only comma-separated integers");
         } else {
-            addCookie(title, url, responseSequence);
+            addVideo(title, url, responseSequence);
         }
-    });
-
-    document.getElementById('deleteBtn').addEventListener('click', () => {
-        deleteSelectedVideos();
     });
 
     document.getElementById('manageForm').addEventListener('submit', (e) => {
         e.preventDefault();
-        playVideos();
+        startAssessment();
+    });
+
+    document.getElementById('deleteBtn').addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent the default action of the click event
+        e.stopPropagation(); // Stop event propagation to prevent triggering the form submission
+        deleteSelectedVideos();
     });
 });
 
-function playVideos() {
+function startAssessment() {
     let videosToPlay = document.querySelectorAll('input[name="videos"]:checked');
     if (videosToPlay.length === 0) {
         alert('Please select at least one video to play.');
@@ -50,7 +52,7 @@ function playVideos() {
     return false;
 }
 
-function addCookie(title, url, responseSequence){
+function addVideo(title, url, responseSequence){
     let titleArray = getCookie("video_title") || [];
     let urlArray = getCookie("video_url") || [];
     let responseSequenceArray = getCookie("response_sequence") || [];
@@ -95,10 +97,11 @@ function deleteSelectedVideos() {
     setCookie("response_sequence", JSON.stringify(responseSequenceArray), 1);
 
     // Refresh UI
-    getCookies();
+    //updateUI();
+    window.location.reload()
 }
 
-function getCookies(){
+function updateUI(){
     let titleArray = getCookie("video_title");
     let res = '';
 

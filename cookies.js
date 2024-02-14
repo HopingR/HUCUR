@@ -47,8 +47,22 @@ function startAssessment() {
         selectedVideos.push({ title, url, responseSequence });
     }
 
+    
+
     // Store selected videos in sessionStorage to pass to the next page
     sessionStorage.setItem('selectedVideos', JSON.stringify(selectedVideos));
+    // Retrieve idle time, play time, and session time values
+    let idleTime = document.getElementById('idleTime').value;
+    let playTime = document.getElementById('playTime').value;
+    let sessionTime = document.getElementById('sessionTime').value;
+
+    // Store selected videos and additional data in sessionStorage to pass to the next page
+    let assessmentData = {
+        idleTime: idleTime,
+        playTime: playTime,
+        sessionTime: sessionTime
+    };
+    sessionStorage.setItem('assessmentData', JSON.stringify(assessmentData));
 
     // Navigate to the playback.html page
     window.location.href = 'playback.html';

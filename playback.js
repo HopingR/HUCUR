@@ -31,4 +31,21 @@ document.addEventListener('DOMContentLoaded', function () {
         // Display a message if no videos are selected
         selectedVideoInfoContainer.innerHTML = '<p>No videos selected.</p>';
     }
+
+    // Retrieve assessment data from sessionStorage
+    const assessmentData = JSON.parse(sessionStorage.getItem('assessmentData'));
+
+    // Display assessment parameters
+    const assessmentParamsContainer = document.getElementById('assessmentParams');
+    if (assessmentData) {
+        assessmentParamsContainer.innerHTML = `
+            <h2>Assessment Parameters:</h2>
+            <p><strong>Idle Time:</strong> ${assessmentData.idleTime}</p>
+            <p><strong>Play Time:</strong> ${assessmentData.playTime}</p>
+            <p><strong>Session Time:</strong> ${assessmentData.sessionTime}</p>
+        `;
+    } else {
+        // Display a message if assessment parameters are not found
+        assessmentParamsContainer.innerHTML = '<p>No assessment parameters found.</p>';
+    }
 });

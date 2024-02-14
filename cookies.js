@@ -38,7 +38,12 @@ function startAssessment() {
         let index = videosToPlay[i].id.split('_')[1]; // Extract index from id
         let title = getCookie("video_title")[index];
         let url = getCookie("video_url")[index];
-        let responseSequence = getCookie("response_sequence")[index];
+        let responseSequenceInput = document.getElementById(`responseSequence_${index}`);
+        let responseSequence = responseSequenceInput.value; // Get the value from the input field
+        if (responseSequence === "") {
+            // If the user hasn't edited the response sequence, use the default value from the cache
+            responseSequence = getCookie("response_sequence")[index];
+        }
         selectedVideos.push({ title, url, responseSequence });
     }
 
@@ -46,11 +51,9 @@ function startAssessment() {
     sessionStorage.setItem('selectedVideos', JSON.stringify(selectedVideos));
 
     // Navigate to the playback.html page
-    alert(selectedVideos);
-    alert('Redirecting');
     window.location.href = 'playback.html';
-    return false;
 }
+
 
 function addVideo(title, url, responseSequence){
     let titleArray = getCookie("video_title") || [];
@@ -103,16 +106,25 @@ function deleteSelectedVideos() {
 
 function updateUI(){
     let titleArray = getCookie("video_title");
+    let urlArray = getCookie("video_url");
+    let responseSequenceArray = getCookie("response_sequence");
     let res = '';
 
     if(titleArray){
         for(let i = 0; i < titleArray.length; i++){
-            res += `<input type="checkbox" id="video_${i}" name="videos" value="${titleArray[i]}">
-                    <label for="video_${i}">${titleArray[i]}</label><br>`;
+            res += `<div class="row">
+                        <div class="col">
+                            <input type="checkbox" id="video_${i}" name="videos" value="${titleArray[i]}">
+                            <label for="video_${i}">${titleArray[i]}</label>
+                            <input type="hidden" id="url_${i}" value="${urlArray[i]}">
+                            <input type="text" id="responseSequence_${i}" value="${responseSequenceArray[i]}">
+                        </div>
+                    </div>`; // Make response sequence editable
         }
         document.getElementById('videoList').innerHTML = res;
     }
 }
+
 
 function setCookie(key, value, time){
     let d = new Date();

@@ -8,7 +8,12 @@ document.addEventListener('DOMContentLoaded', function () {
         selectedVideos.forEach((video, index) => {
             const title = video.title;
             const url = video.url;
-            const responseSequence = video.responseSequence.join(', ');
+            let responseSequence = '';
+            if (Array.isArray(video.responseSequence)) {
+                responseSequence = video.responseSequence.join(', ');
+            } else {
+                responseSequence = video.responseSequence;
+            }
 
             // Create HTML elements to display video information
             const videoInfoElement = document.createElement('div');

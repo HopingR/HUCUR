@@ -2,18 +2,42 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    .video-container {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 20px;
+      pointer-events: none; /* Disable pointer events for video containers */
+    }
+    .play-button {
+      pointer-events: auto; /* Enable pointer events for buttons */
+    }
+    .player {
+      width: 640px; /* Set width of the player */
+      height: 360px; /* Set height of the player */
+    }
+  </style>
 </head>
 <body>
-  <div id="container">
-    <!-- Container for the video player -->
-    <div id="player"></div>
+  <div class="video-container">
+    <!-- Container for the first video player -->
+    <div class="player" id="player1"></div>
+    <!-- Placeholder for response sequence of video 1 -->
+    <div id="responseSequence1"></div>
+    <!-- Play button for the first video -->
+    <button class="play-button" id="playButton1">Play Video 1</button>
   </div>
 
-  <div id="responseSequence">
-    <!-- Display response sequence here -->
+  <div class="video-container">
+    <!-- Container for the second video player -->
+    <div class="player" id="player2"></div>
+    <!-- Placeholder for response sequence of video 2 -->
+    <div id="responseSequence2"></div>
+    <!-- Play button for the second video -->
+    <button class="play-button" id="playButton2">Play Video 2</button>
   </div>
-  <p>responseSequence = [2, 5, 3, 1, 2, 4]</p>
 
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script src="script.js"></script>
 </body>
 </html>

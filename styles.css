@@ -1,12 +1,13 @@
-#container {
-    width: 640px; /* Set container width */
-    height: 360px; /* Set container height */
-    position: relative; /* Make container position relative */
-  }
-  
-  #player {
-    width: 100%; /* Make player fill container width */
-    height: 100%; /* Make player fill container height */
-    pointer-events: none; /* Disable pointer events for player */
-  }
-  
+.video-container {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+  pointer-events: none; /* Disable pointer events for video containers */
+}
+.play-button {
+  pointer-events: auto; /* Enable pointer events for buttons */
+}
+.player {
+  width: 640px; /* Set width of the player */
+  height: 360px; /* Set height of the player */
+}

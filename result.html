@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link to custom CSS -->
+    <link rel="stylesheet" href="css/result.css">
+</head>
+<body>
+    <div class="container-fluid bg-dark text-light py-5">
+        <div class="container">
+            <h1 class="text-center mb-5">Results Section</h1>
+            <!-- Button to start over -->
+            <button id="startOverBtn" class="btn btn-primary mb-3"><i class="fas fa-undo-alt"></i> Start Over</button>
+            <!-- Button to show results -->
+            <button id="showResultsBtn" class="btn btn-success mb-3"><i class="fas fa-chart-bar"></i> Results</button>
+
+            <!-- Container to display results -->
+            <div id="resultsContainer" style="display: none;">
+                <h2 class="text-center mb-4">Results of the Assessment</h2>
+                <div id="resultsContent"></div>
+                <!-- Container for the graphs -->
+                <div class="row mt-5">
+                    <!-- Column for the bar chart -->
+                    <div class="col-md-6">
+                        <canvas id="barChart"></canvas>
+                    </div>
+                    <!-- Column for the line chart -->
+                    <div class="col-md-6">
+                        <canvas id="lineChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer section -->
+    <footer class="footer bg-dark text-light py-3">
+        <div class="container text-center">
+            <p>Copyright &copy; 2024. Website for Dr.Curiel.</p>
+        </div>
+    </footer>
+
+    <!-- Link to Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <!-- Link to Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Link to Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Link to custom JavaScript -->
+    <script src="scripts/result.js"></script>
+    
+</body>
+</html>

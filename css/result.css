@@ -77,6 +77,8 @@ h4, h2, h3 {
 .table-responsive table th {
     background-color: #f0f0f0; /* Light gray background for table headers */
     font-weight: bold;
+    font-family: 'Font Awesome', sans-serif;
+    font-size: 20px; /* Adjust the font size as needed */
 }
 
 /* Style for alternating row colors */
@@ -87,4 +89,21 @@ h4, h2, h3 {
 p {
     font-size: 20px; /* Adjust the font size as needed */
     color: black; /* Assuming you want the text color to remain black */
+}
+
+/* Change font to Font Awesome and increase font size for table content */
+.table td {
+    font-family: 'Font Awesome', sans-serif;
+    font-size: 20px; /* Adjust the font size as needed */
+}
+
+/* Style for footer */
+.footer {
+    background-color: #343a40; /* Dark background color */
+    color: #fff; /* Light text color */
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+.footer p {
+    margin-bottom: 0; /* Remove default margin for paragraph */
 }

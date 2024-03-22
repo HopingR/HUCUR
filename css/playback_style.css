@@ -1,0 +1,111 @@
+/* Add your custom styles here */
+
+.container {
+    width: 100%;
+  }
+  
+  /* Style for the video player containers */
+  #container1, #container2, #container3 {
+    width: 100%;
+    height: 360px;
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden; /* Ensure rounded corners are applied properly */
+  }
+  
+  #player1, #player2, #player3 {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px; /* Rounded corners */
+    pointer-events: none;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mt-3 {
+    margin-top: 1rem;
+  }
+  
+  .row {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  
+  .col-md-4 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  
+  .col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+  
+  h1, h2 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+  }
+  
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  /* Style for circular buttons */
+  .btn-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50% !important; /* Half of the width and height to make it a circle */
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  /* Additional style to override Bootstrap's button styles */
+  .btn-primary {
+    background-color: transparent;
+    color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+  
+  /* Disable mouse pointer for disabled buttons */
+  .btn:disabled {
+    cursor: not-allowed;
+  }
+  
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: grey; /* Adjust as needed */
+    color: white; /* Adjust as needed */
+    text-align: center;
+    padding: 10px 0; /* Adjust padding as needed */
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+
+  .fa-play {
+    font-size: x-large;
+  }
+
+  .empty
+  {
+    margin-top: 200px;
+  }
+
+  

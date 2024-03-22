@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="./css/playback_style.css">
+  <!-- Adding Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+  <div class="empty"></div>
+  <div class="container-fluid mt-5">
+    <!--<h1 class="text-center">Hi! Welcome to PlayBack!!</h1> no need of displaying title-->
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <!--<div id="title1"></div>-- no need of displaying video title-->
+        <div id="container1" class="container">
+          <!-- Container for the first video player -->
+          <div id="player1"></div>
+        </div>
+        <div class="text-center mt-3">
+          <!--<div id="responseSequence1" class="text-center mt-3"></div> no need of displaying response sequence-->
+          <button class="btn btn-primary btn-circle" id="btn1"><i class="fas fa-play"></i></button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <!--<div id="title2"></div> no need of displaying video title-->
+        <div id="container2" class="container">
+          <!-- Container for the second video player -->
+          <div id="player2"></div>
+        </div>
+        <div class="text-center mt-3">
+            <!--<div id="responseSequence2" class="text-center mt-3"></div> no need of displaying response sequence-->
+          <button class="btn btn-primary btn-circle" id="btn2"><i class="fas fa-play"></i></button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <!--<div id="title3"></div> no need of displaying video title-->
+        <div id="container3" class="container">
+          <!-- Container for the third video player -->
+          <div id="player3"></div>
+        </div>
+        <div class="text-center mt-3">
+            <!--<div id="responseSequence3" class="text-center mt-3"></div> no need of displaying response sequence-->
+          <button class="btn btn-primary btn-circle" id="btn3"><i class="fas fa-play"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="empty"></div>
+  <!-- Footer -->
+<footer class="footer">
+  <div class="container">
+      <p class="text-white">Copyright &copy; 2024. Website for Dr.Curiel.</p>
+  </div>
+</footer>
+
+  <!-- Adding Bootstrap JS (popper.js and jQuery are required for Bootstrap) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script src="./scripts/playback.js"></script>
+</body>
+</html>

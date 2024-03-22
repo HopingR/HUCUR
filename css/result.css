@@ -1,0 +1,90 @@
+/* Custom CSS for result.html */
+
+/* Style for container */
+.container-fluid {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Style for results container */
+#resultsContainer {
+    background-color: #f8f9fa; /* Light gray background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for array values */
+.array-values {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333; /* Dark text color */
+    margin-bottom: 10px;
+}
+
+/* Style for buttons */
+.btn {
+    border-radius: 25px;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 0 10px;
+}
+
+/* Style for icons inside buttons */
+.btn i {
+    margin-right: 5px;
+}
+
+h4, h2, h3 {
+    color: black;
+}
+
+
+/* Style for highlighting the response sequence */
+.highlight {
+    background-color: red; /* Change the background color as needed */
+    color: white; /* Change the text color as needed */
+    border-radius: 50%; /* Make it circular */
+    padding: 2px 6px; /* Adjust padding as needed */
+}
+
+/* Style for Interaction Summary */
+.table-responsive table:nth-child(2) {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-responsive table:nth-child(2) th {
+    text-align: center;
+    font-size: 24px; /* Adjust the font size as needed */
+}
+
+/* Style for table */
+.table-responsive table {
+    width: 100%;
+}
+
+.table-responsive table th,
+.table-responsive table td {
+    padding: 10px;
+    text-align: center;
+}
+
+.table-responsive table th {
+    background-color: #f0f0f0; /* Light gray background for table headers */
+    font-weight: bold;
+}
+
+/* Style for alternating row colors */
+.table-responsive table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray background for even rows */
+}
+
+p {
+    font-size: 20px; /* Adjust the font size as needed */
+    color: black; /* Assuming you want the text color to remain black */
+}

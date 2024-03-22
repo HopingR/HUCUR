@@ -87,11 +87,15 @@ document.addEventListener('DOMContentLoaded', function () {
             <p> Total Session Time : ${(totalSessionTime / 1000).toFixed(2)} (secs) / ${(totalSessionTime / 60000).toFixed(2)} (mins) </p>
             <p> Play Time : ${(playtime / 1000).toFixed(2)} (secs) / ${(playtime / 60000).toFixed(2)} (mins) </p>
 
-            <h2 class="text-center">The highest played video is ${
-                sumVideo1 >= sumVideo2 && sumVideo1 >= sumVideo3 ? videoTitles[0] :
-                sumVideo2 >= sumVideo1 && sumVideo2 >= sumVideo3 ? videoTitles[1] :
+            <h2 class="text-center">The highest played video${(sumVideo1 === sumVideo2 && sumVideo1 === sumVideo3) ? 's are' : ' is'} ${
+                sumVideo1 >= sumVideo2 && sumVideo1 >= sumVideo3 ? videoTitles[0] +
+                (sumVideo1 === sumVideo2 ? ' and ' + videoTitles[1] : '') +
+                (sumVideo1 === sumVideo3 ? ' and ' + videoTitles[2] : '') :
+                sumVideo2 >= sumVideo1 && sumVideo2 >= sumVideo3 ? videoTitles[1] +
+                (sumVideo2 === sumVideo3 ? ' and ' + videoTitles[2] : '') :
                 videoTitles[2]
             }</h2>
+            
             
             <div class="table-responsive">
             <table class="table">
@@ -268,17 +272,17 @@ function drawLineGraph(sumVideo1, sumVideo2, sumVideo3, videoTitles) {
     });
     document.getElementById('resultsContainer').appendChild(downloadLineChartBtn);
 
-    // Create and append download report button
+
     const downloadReportBtn = document.createElement('button');
     downloadReportBtn.textContent = 'Download Report';
     downloadReportBtn.className = 'btn btn-primary';
     downloadReportBtn.id = 'downloadReport';
     downloadReportBtn.style.marginTop = '10px';
     downloadReportBtn.addEventListener('click', function () {
-    // Call function to download report
-    downloadReport();
+    window.print();
 });
 document.getElementById('resultsContainer').appendChild(downloadReportBtn);
+
 }
 
 // Function to calculate total based on response sequence, additional clicks, and index
@@ -302,23 +306,14 @@ function highlightResponse(responseSequence, index) {
     return responseSequence.map((value, i) => i === index - 1 ? `<span class="highlight">${value}</span>` : value).join(', ');
 }
 
-// Function to download report as a screenshot or PDF
 function downloadReport() {
-    const resultsContainer = document.getElementById('resultsContainer');
-
-    // Use html2canvas to capture the contents of resultsContainer
-    html2canvas(resultsContainer).then(canvas => {
-        // Convert the canvas to a data URL
-        const dataURL = canvas.toDataURL();
-
-        // Create a temporary link element
-        const link = document.createElement('a');
-        link.href = dataURL;
-        link.download = 'report.png'; // Change the file name and extension as needed
-
-        // Simulate a click on the link to trigger the download
-        link.click();
+    html2canvas(document.body).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF();
+        const imgProps = pdf.getImageProperties(imgData);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save('report.pdf');
     });
 }
-
-
